@@ -1,6 +1,11 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+    <ul>
+      <li v-for="(users) in users" :key="users.id">
+        {{ users }}
+      </li>
+    </ul>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -13,6 +18,11 @@ export default {
   name: 'home',
   components: {
     HelloWorld,
+  },
+  created() {
+    this.$store.dispatch('getUsers')
+      .then((result) => { console.table(result.data) })
+      .catch((err) => { console.error(err) })
   },
 }
 </script>

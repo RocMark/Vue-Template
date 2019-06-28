@@ -14,8 +14,9 @@ module.exports = {
     'vue/require-v-for-key': 1,
     // 作業系統 LF & CRLF 差異
     'linebreak-style': 0,
-    // airbnb 路徑問題
-    'import/no-unresolved': 0,
+    // 插件路徑問題
+    // 'import/no-unresolved': 0,
+    // 'import/extensions': 0,
     // 將錯誤改成警告，無傷大雅的樣式(save on fix)
     'semi': ['error','never'],
     'max-len': 0,
