@@ -1,26 +1,9 @@
-# vue-app
+# Vue CLI3 Template
 
-## Project setup
-```
-npm install
-```
+## 前言
+創建寫 side project 用的模板
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
+## 調整
+- ESLint 部分 rule 更動
+- FireBase 設定
+- BluePrint 設定
