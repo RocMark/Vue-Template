@@ -1,4 +1,5 @@
 ## Vue 專案建置筆記
+- [JSON Server 設定](https://ithelp.ithome.com.tw/articles/10212106)
 
 ## 大綱
 - 系統管理員操作
