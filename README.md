@@ -1,4 +1,4 @@
-# Vue CLI3 Template
+# Vue-Template
 
 ## 前言
 創建寫 side project 用的模板
@@ -18,8 +18,8 @@
 - 全域 axios
 - JSON Server
 - Git Commit 模板
+- BluePrint 藍圖建立檔案
 
 ## 調整
 - ESLint 部分 rule 更動
 - FireBase 設定
-- BluePrint 設定

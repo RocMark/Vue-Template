@@ -1,11 +1,11 @@
 <template>
-  <div class="">
+  <div class="{{kebabCase name}}">
   </div>
 </template>
 
 <script>
 export default {
-  name: '',
+  name: '{{pascalCase name}}',
   // data computed methods watch
   // mounted components
   data() {
