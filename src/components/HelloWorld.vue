@@ -9,7 +9,14 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String,
+    msg: {
+      type: String,
+      required: true,
+      // 注意不可使用 data/computed,props於beforeCreated建立
+      default: () => { 'test' },
+      // 必須符合陣列中的值 才會通過
+      validator: value => (['test123'].indexOf(value) !== -1)
+    }
   },
 }
 </script>
