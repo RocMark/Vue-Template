@@ -9,6 +9,7 @@ const userRequest = axios.create({
   headers: { 'Content-Type': 'application/json' },
 })
 
+// 關閉 Prettier & phpfmt 
 export default new Vuex.Store({
   state: {
 
@@ -21,4 +22,5 @@ export default new Vuex.Store({
       return userRequest.get('/users')
     },
   },
+  strict: process.env.NODE_ENV !== 'production'
 })
