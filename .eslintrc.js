@@ -26,13 +26,13 @@ module.exports = {
     'no-trailing-spaces': 0,
     quotes: [ "error", "single" ],
     "comma-dangle": [
-      "error",
+      "warn",
       {
-        arrays: "always",
+        arrays: "never",
         objects: "always",
-        imports: "always",
-        exports: "always",
-        functions: "always"
+        imports: "never",
+        exports: "never",
+        functions: "never"
       }
     ]
   },
