@@ -6,11 +6,14 @@
 
 ## 使用
 ```
+  // 建立專案環境
+  npm i 
+  
+  // 啟動 Vue 專案
+  npm run serve
+  
   // 開啟 json-server
   npm run json-server
-
-  // 啟動 vue 開發模式
-  npm run serve
 ```
 
 ## 功能
