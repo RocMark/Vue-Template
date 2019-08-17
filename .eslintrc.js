@@ -24,6 +24,17 @@ module.exports = {
     'space-before-blocks': 1,
     'no-multiple-empty-lines': 1,
     'no-trailing-spaces': 0,
+    quotes: [ "error", "single" ],
+    "comma-dangle": [
+      "error",
+      {
+        arrays: "never",
+        objects: "never",
+        imports: "never",
+        exports: "never",
+        functions: "never"
+      }
+    ]
   },
   parserOptions: {
     parser: 'babel-eslint',
