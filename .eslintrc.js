@@ -17,6 +17,13 @@ module.exports = {
     // 插件路徑問題
     // 'import/no-unresolved': 0,
     // 'import/extensions': 0,
+    // 2019/8/23 修改 rule
+    'no-unused-vars': 1,
+    'object-curly-newline': 0,
+    'no-irregular-whitespace': 0,
+    'no-multi-spaces': 0,
+    'spaced-comment': 1,
+    "vue/no-unused-components": 1,
     // 將錯誤改成警告，無傷大雅的樣式(save on fix)
     'semi': ['error','never'],
     'max-len': 0,
