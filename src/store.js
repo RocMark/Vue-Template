@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue"
+import Vuex from "vuex"
 // import axios from 'axios'
 
 Vue.use(Vuex)
@@ -10,17 +10,12 @@ Vue.use(Vuex)
 // })
 
 export default new Vuex.Store({
-  getters: {
-  },
-  state: {
-  },
+  getters: {},
+  state: {},
   // actions function 首個變數為 context 請勿省略
   actions: {
-    // actionsFunc(context, data){    }
-    // getUsers() { return userRequest.get('/users') },
+    // getUsers(context, data){ return userRequest.get('/users') }
   },
-  mutations: {
-
-  },
-  strict: process.env.NODE_ENV !== 'production',
+  mutations: {},
+  strict: process.env.NODE_ENV !== "production"
 })
