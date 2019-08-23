@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
+// import axios from 'axios'
 
 Vue.use(Vuex)
 
-const userRequest = axios.create({
-  baseURL: 'http://localhost:3000',
-  headers: { 'Content-Type': 'application/json' },
-})
+// const userRequest = axios.create({
+//   baseURL: 'http://localhost:3000',
+//   headers: { 'Content-Type': 'application/json', },
+// })
 
 export default new Vuex.Store({
   getters: {
@@ -22,5 +22,5 @@ export default new Vuex.Store({
   mutations: {
 
   },
-  strict: process.env.NODE_ENV !== 'production'
+  strict: process.env.NODE_ENV !== 'production',
 })

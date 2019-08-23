@@ -1,5 +1,14 @@
 # 全域 SASS 檔案
 
+# 建立檔案
+- 建立在 src/scss/style.scss
+- 於 main.js 撰寫即可
+- [參考資料](http://bit.ly/bs4-in-vuecli3)
+```js
+  import './scss/style.scss'
+```
+
+
 # 安裝套件
 - Vue UI 新增套件 sass-resources-loader
 ```

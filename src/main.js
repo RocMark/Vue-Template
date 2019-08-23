@@ -4,6 +4,9 @@ import VueAxios from 'vue-axios'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import './scss/style.scss'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 Vue.use(VueAxios, axios)
 

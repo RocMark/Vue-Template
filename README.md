@@ -5,10 +5,16 @@ VueCli 3.0
 
 ## 使用
 ```
+  // 安裝 vue cli 套件
+  npm install -g @vue/cli
+
+  // 安裝 json-server
+  npm install -g json-server
+
   // 建立專案環境
   npm i 
 
-  // 修復高危套件
+  // 修復高危套件 (有提示才需要)
   npm audit fix
   
   // 啟動 Vue 專案
