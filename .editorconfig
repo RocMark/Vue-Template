@@ -2,7 +2,7 @@
 # 用於所有* 的 js,jsx....檔案5
 indent_style = space
 indent_size = 2
-# 看系統使用的換行為何 LF/CR/CRLF
+# 看系統使用的換行為何決定使用 LF/CR/CRLF
 end_of_line = lf 
 charset = utf-8
 trim_trailing_whitespace = true

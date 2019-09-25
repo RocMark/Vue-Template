@@ -1,11 +1,12 @@
 <template>
-  <div class="{{kebabCase name}}">
+  <div class="example-page">
+    <h1>ExamplePage</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: '{{pascalCase name}}',
+  name: 'ExamplePage',
 }
 </script>
 

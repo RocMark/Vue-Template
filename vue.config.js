@@ -2,6 +2,10 @@ const path = require('path')
 
 function resolve(dir) { return path.join(__dirname, dir) }
 module.exports = {
+  // 可以設定 build 後的路徑
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/'
+    : '/',
   configureWebpack: {
     resolve: {
       alias: {

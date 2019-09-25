@@ -8,10 +8,15 @@ module.exports = {
     '@vue/airbnb',
   ],
   rules: {
+    // @ 問題
+    'import/no-unresolved': 0,
+    'import/extensions': 0,
+
+    // v-for 推薦使用 v-bind:key 提升效能 (暫時關閉)
+    'vue/require-v-for-key': 0,
+
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    // v-for 推薦使用 v-bind:key 提升效能
-    'vue/require-v-for-key': 1,
     // 作業系統 LF & CRLF 差異
     'linebreak-style': 0,
     // 插件路徑問題
