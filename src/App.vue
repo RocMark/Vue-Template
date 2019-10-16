@@ -15,8 +15,8 @@
 import { mapState } from 'vuex'
 import TheNav from '@/components/TheNav'
 import exampleMixins from '@/mixins/exampleMixins'
-import BaseDatePicker from '@/components/BaseDatePicker'
-import BasePagination from '@/components/BasePagination'
+import BaseDatePicker from '@/components/base/BaseDatePicker'
+import BasePagination from '@/components/base/BasePagination'
 
 
 export default {
