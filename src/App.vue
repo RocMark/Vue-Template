@@ -5,6 +5,7 @@
       <BaseDatePicker></BaseDatePicker>
       <BasePagination></BasePagination>
     </div>
+    <h1>test master</h1>
     <router-view/>
   </div>
 </template>
