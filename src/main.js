@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
+import moment from 'moment'
 import VueAxios from 'vue-axios'
 import App from './App.vue'
 import router from './router'
@@ -16,6 +17,8 @@ Vue.use(VueAxios, axios)
 
 
 Vue.config.productionTip = false
+Vue.prototype.moment = moment
+
 
 new Vue({
   router,

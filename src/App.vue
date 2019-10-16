@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-
     <TheNav></TheNav>
+    <div v-if="testMode">
+      <BaseDatePicker></BaseDatePicker>
+    </div>
 
     <router-view/>
 
@@ -14,11 +16,17 @@
 import { mapState } from 'vuex'
 import TheNav from '@/components/TheNav'
 import exampleMixins from '@/mixins/exampleMixins'
+import BaseDatePicker from '@/components/BaseDatePicker'
 
 
 export default {
   name: 'App',
   mixins: [exampleMixins],
+  data() {
+    return {
+      testMode: true,
+    }
+  },
   computed: {
     // Global
     ...mapState(['rootTest']),
@@ -33,6 +41,7 @@ export default {
   },
   components: {
     TheNav,
+    BaseDatePicker,
   },
 }
 
