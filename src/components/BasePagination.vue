@@ -3,7 +3,8 @@
     <!-- v-model="page" -->
     <!-- //! :page-count="currentPageCount" 必要屬性要補上!!! -->
     <paginate
-      v-if="dataExist"
+      v-if="true"
+      :page-count="10"
       :click-handler="clickCallback"
       :prev-text="'Prev'"
       :next-text="'Next'"

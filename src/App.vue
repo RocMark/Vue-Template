@@ -3,10 +3,9 @@
     <TheNav></TheNav>
     <div v-if="testMode">
       <BaseDatePicker></BaseDatePicker>
+      <BasePagination></BasePagination>
     </div>
-
     <router-view/>
-
   </div>
 </template>
 
@@ -17,6 +16,7 @@ import { mapState } from 'vuex'
 import TheNav from '@/components/TheNav'
 import exampleMixins from '@/mixins/exampleMixins'
 import BaseDatePicker from '@/components/BaseDatePicker'
+import BasePagination from '@/components/BasePagination'
 
 
 export default {
@@ -32,16 +32,22 @@ export default {
     ...mapState(['rootTest']),
     // 區域
     ...mapState('exampleApi', ['exampleApiTestStr']),
+    // vuex-router-sync
+    ...mapState('route', 
+      {
+        routePath: 'path',
+      }),
   },
   mounted() {
     this.globalTestFunc()
     this.exampleTestFunc()
-    console.warn(this.exampleApiTestStr)
-    console.warn(this.rootTest)
+    console.warn('state', this.$store.state.route)
+    console.warn('routePath', this.routePath)
   },
   components: {
     TheNav,
     BaseDatePicker,
+    BasePagination,
   },
 }
 

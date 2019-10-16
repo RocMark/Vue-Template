@@ -1,6 +1,6 @@
 <template>
   <div class="base-date-picker">
-    <h4>DatePicker SelectedDate {{ testDate }}</h4>
+    <h4>{{ formatedDate }}</h4>
     <!-- :format="customFormatter" -->
     <Datepicker 
       v-model=testDate
@@ -47,6 +47,11 @@ export default {
         // }],
       },
     }
+  },
+  computed: {
+    formatedDate() {
+      return this.moment(this.testDate).format('MMMM Do YYYY, h:mm:ss a')
+    },
   },
   props: {
     oldestDate: {
