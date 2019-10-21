@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <TheNav></TheNav>
     <div v-if="testMode">
-      <BaseDatePicker></BaseDatePicker>
-      <RangeDatePicker v-on:getRangeDate="getRangeDate"></RangeDatePicker>
-      <BasePagination></BasePagination>
+      <TheNav></TheNav>
+      <div v-if="testMode">
+        <BaseDatePicker></BaseDatePicker>
+        <RangeDatePicker v-on:getRangeDate="getRangeDate"></RangeDatePicker>
+        <BasePagination></BasePagination>
+      </div>
     </div>
     <router-view/>
   </div>
@@ -26,7 +28,7 @@ export default {
   mixins: [exampleMixins],
   data() {
     return {
-      testMode: true,
+      testMode: false,
     }
   },
   methods: {
