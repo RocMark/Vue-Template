@@ -1,10 +1,9 @@
 <template>
   <div disabled-class="base-pagination">
     <!-- v-model="page" -->
-    <!-- //! :page-count="currentPageCount" 必要屬性要補上!!! -->
+    <!-- v-if="dataExist" -->
     <paginate
-      v-if="true"
-      :page-count="10"
+      :page-count="currentPageCount"
       :click-handler="clickCallback"
       :prev-text="'Prev'"
       :next-text="'Next'"
@@ -19,25 +18,50 @@
       
       :active-class="'active'"
       :disabled-class="'disabled'"
+      :hide-prev-next="currentPageCount <= 1" 
       >
-      <!-- :hide-prev-next="defaultPerPage <= 1"  -->
     </paginate>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import paginate from 'vuejs-paginate'
 
 // ? bs4樣式 http://bit.ly/vue-pagi-style
 
 export default {
   name: 'BasePagination',
+  // data() {
+  //   return {
+  //     page: 1,
+  //   }
+  // },
+  // ! 實際使用 要用 dataExist
   props: {
     dataExist: {
       type: Boolean,
+      default: true,
+      required: false,
+    },
+    currentPageCount: {
+      type: Number,
+      default: 10,
       required: true,
     },
   },
+  computed: {
+    ...mapState('route', { 
+      routeQuery: 'query', 
+      routePath: 'path',
+    }),
+  },
+  // watch: {
+  //   $route() {
+  //     alert('routeQuery', this.routeQuery)
+  //     this.page = this.routeQuery.page
+  //   },
+  // },
   methods: {
     clickCallback() {
     },

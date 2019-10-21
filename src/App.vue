@@ -3,9 +3,9 @@
     <TheNav></TheNav>
     <div v-if="testMode">
       <BaseDatePicker></BaseDatePicker>
+      <RangeDatePicker v-on:getRangeDate="getRangeDate"></RangeDatePicker>
       <BasePagination></BasePagination>
     </div>
-    <h1>test master</h1>
     <router-view/>
   </div>
 </template>
@@ -18,6 +18,7 @@ import TheNav from '@/components/TheNav'
 import exampleMixins from '@/mixins/exampleMixins'
 import BaseDatePicker from '@/components/base/BaseDatePicker'
 import BasePagination from '@/components/base/BasePagination'
+import RangeDatePicker from '@/components/base/RangeDatePicker'
 
 
 export default {
@@ -28,10 +29,13 @@ export default {
       testMode: true,
     }
   },
+  methods: {
+    getRangeDate(data) {
+      console.warn(data)
+    },
+  },
   computed: {
-    // Global
     ...mapState(['rootTest']),
-    // 區域
     ...mapState('exampleApi', ['exampleApiTestStr']),
     // vuex-router-sync
     ...mapState('route', 
@@ -44,11 +48,15 @@ export default {
     this.exampleTestFunc()
     console.warn('state', this.$store.state.route)
     console.warn('routePath', this.routePath)
+
+    const loader = this.$loading.show() 
+    setTimeout(() => { loader.hide() }, 500)
   },
   components: {
     TheNav,
     BaseDatePicker,
     BasePagination,
+    RangeDatePicker,
   },
 }
 

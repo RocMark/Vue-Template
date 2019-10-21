@@ -1,17 +1,18 @@
 <template>
-  <div class="base-date-picker">
-    <h4>{{ formatedDate }}</h4>
+  <div class="base-date-picker d-flex align-items-center py-4">
+    <!-- <h4>{{ formatedTime }}</h4> -->
     <!-- :format="customFormatter" -->
+    <span v-if="datePickerTitleExist" class="mr-2">{{ datePickerTitle }}</span>
     <Datepicker 
       v-model=testDate
       :language="languageMode.en" 
       :inline="calendarMode"
       :disabled-dates="disabledDates"
+      @selected="emitFunc"
       >
       </Datepicker>
   </div>
 </template>
-
 <script>
 import Datepicker from 'vuejs-datepicker'
 import { en, zh, zhHK } from 'vuejs-datepicker/dist/locale'
@@ -22,7 +23,6 @@ export default {
   data() {
     return {
       testDate: new Date(2019, 10, 16), // v-model 必須傳入 Date　物件
-      calendarMode: false, // :inline 屬性 設定是否將日曆預設打開
       languageMode: {
         en,   // English (預設)
         zh,   // Chinese
@@ -49,21 +49,48 @@ export default {
     }
   },
   computed: {
-    formatedDate() {
-      return this.moment(this.testDate).format('MMMM Do YYYY, h:mm:ss a')
+    formatedTime() {
+      return this.moment(this.testDate).format('YYYY-MM-DD')
     },
+    datePickerTitleExist() {
+      return this.datePickerTitle !== ''
+    },
+    // ? 思考一下這要用父元件傳，還是 Vuex 管理，或從 .env 設定?
+    // oldestDate() {
+    //   return new Date(process.env.VUE_APP_FINREPORT_COIN_OLDEST_DATA_DATE)
+    // },
   },
   props: {
-    oldestDate: {
+    minDate: {
       type: Date,
-      // required: true,
+      required: false,
+    },
+    datePickerTitle: {
+      type: String,
+      default: '',
+      required: false,
+    },
+    // :inline 屬性 設定是否將日曆預設打開
+    calendarMode: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
+  },
+  // ! watch midDate Props 聯動 EndDate
+  watch: { 
+    minDate(startDate) {
+      this.disabledDates.to = startDate
     },
   },
   mounted() {
     // this.setDefaultDisableDate()
-    // this.setOldestDate()
+    this.setOldestDate()
   },
   methods: {
+    emitFunc(date) {
+      this.$emit('getDate', date)
+    },
     customFormatter(date) {
       return this.moment(date).format('MMMM Do YYYY, h:mm:ss a')
       // return this.moment(date).format('YYYY-MM-DD')
@@ -71,10 +98,11 @@ export default {
     setDefaultDisableDate() {
       this.disabledDates.from = new Date(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDay())
     },
-    // 測驗未成功
     setOldestDate() {
-      // this.disabledDates.to = this.oldestDate2 || ''
-      // this.disabledDates.to = new Date(2019, 10, 8)
+      this.disabledDates.to = new Date(process.env.VUE_APP_FINREPORT_COIN_OLDEST_DATA_DATE)
+    },
+    setDefaultMinDate() {
+      this.disabledDates.to = this.minDate
     },
   },
   components: {
